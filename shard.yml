@@ -1,0 +1,22 @@
+name: processing
+version: 0.1.0
+
+authors:
+  - postmodern <postmodern.mod3@gmail.com>
+  - Mike Miller <icy.arctic.fox@gmail.com>
+
+description: |
+  Port of the Processing sketchbook software to Crystal.
+
+dependencies:
+  sdl:
+    github: ysbaddaden/sdl.cr
+    # version: "~> 0.1.0"
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: "~> 0.14.0"
+  spectator:
+    gitlab: arctic-fox/spectator
+    version: "~> 0.10.0"
