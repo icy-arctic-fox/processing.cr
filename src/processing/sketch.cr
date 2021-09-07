@@ -1,10 +1,12 @@
 require "./core/color"
 require "./core/math"
+require "./core/rendering"
 
 module Processing
   abstract class Sketch
     include Core::Color
     include Core::Math
+    include Core::Rendering
 
     def self.run
       Processing.run(new)
