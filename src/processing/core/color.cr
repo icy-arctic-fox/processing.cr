@@ -25,6 +25,30 @@ module Processing
       def clear
         renderer.clear
       end
+
+      #
+      # Defines the available color modes.
+      #
+      enum ColorMode
+        RGB
+        HSB
+      end
+
+      def color_mode(mode : ColorMode)
+        # TODO: implement
+      end
+
+      def color_mode(mode : ColorMode, max : Float32)
+        # TODO: implement
+      end
+
+      def color_mode(mode : ColorMode, max1 : Float32, max2 : Float32, max3 : Float32)
+        # TODO: implement
+      end
+
+      def color_mode(mode : ColorMode, max1 : Float32, max2 : Float32, max3 : Float32, maxA : Float32)
+        # TODO: implement
+      end
     end
   end
 end
