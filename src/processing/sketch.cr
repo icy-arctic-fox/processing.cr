@@ -1,3 +1,6 @@
+require "./core/environment"
+require "./core/structure"
+require "./core/color"
 require "./core/color"
 require "./core/math"
 require "./core/rendering"
@@ -7,6 +10,8 @@ require "./core/input/time"
 
 module Processing
   abstract class Sketch
+    include Core::Environment
+    include Core::Structure
     include Core::Color
     include Core::Math
     include Core::Rendering

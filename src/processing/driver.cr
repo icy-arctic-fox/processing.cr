@@ -1,9 +1,15 @@
 module Processing
   private class Driver
     def initialize(@sketch : Sketch)
-      @window = SDL::Window.new("Processing", 640, 480)
+      setup
+
+      @window = SDL::Window.new(@sketch.title, @sketch.width, @sketch.height)
       @renderer = SDL::Renderer.new(@window)
       @sketch.renderer = @renderer
+    end
+
+    def setup
+      @sketch.setup
     end
 
     def run
