@@ -38,16 +38,17 @@ This is an in-development port of the Processing software to Crystal.
 - [ ] Input
     - [ ] Mouse
     - [ ] Keyboard
+    - [X] Time
     - [ ] Files
 - [ ] Output
     - [ ] Save Frame
     - [ ] Files
 - [ ] Math
-    - [ ] Trig
+    - [X] Trig
     - [ ] Vectors
     - [ ] Matrices
-- [ ] Random
-    - [ ] Noise
+    - [ ] Random
+        - [ ] Noise
 
 ## Contributing
 
