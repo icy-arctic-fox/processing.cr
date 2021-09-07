@@ -13,6 +13,31 @@ module Processing
           not_implemented! # TODO: implement updating the display window dimensions
         end
       end
+
+      enum Cursor
+        Arrow
+        Cross
+        Hand
+        Move
+        Text
+        Wait
+      end
+
+      def cursor(kind : Cursor)
+        not_implemented!
+      end
+
+      def cursor(img)
+        not_implemented!
+      end
+
+      def cursor(img, x, y)
+        not_implemented!
+      end
+
+      def cursor
+        not_implemented!
+      end
     end
   end
 end
