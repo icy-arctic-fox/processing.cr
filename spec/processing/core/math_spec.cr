@@ -6,8 +6,7 @@ end
 
 Spectator.describe Processing::Core::Math do
   subject(math) { Wrapper.new }
-
-  TOLERANCE = Float64::EPSILON * 10
+  let(tolerance) { Float64::EPSILON * 10 }
 
   describe "#abs" do
     it "returns the absolute value" do
@@ -57,64 +56,64 @@ Spectator.describe Processing::Core::Math do
   describe "#sin" do
     it "returns the sine of a value" do
       angle = ::Math::PI / 3
-      expect(&.sin(angle)).to be_within(TOLERANCE).of(0.866025403784438)
+      expect(&.sin(angle)).to be_within(tolerance).of(0.866025403784438)
     end
   end
 
   describe "#cos" do
     it "returns the cosine of a value" do
       angle = ::Math::PI / 3
-      expect(&.cos(angle)).to be_within(TOLERANCE).of(0.5)
+      expect(&.cos(angle)).to be_within(tolerance).of(0.5)
     end
   end
 
   describe "#tan" do
     it "returns the tangent of a value" do
       angle = ::Math::PI / 3
-      expect(&.tan(angle)).to be_within(TOLERANCE).of(1.732050807568877)
+      expect(&.tan(angle)).to be_within(tolerance).of(1.732050807568877)
     end
   end
 
   describe "#acos" do
     it "returns the inverse cosine of a value" do
-      expect(&.acos(0.5)).to be_within(TOLERANCE).of(::Math::PI / 3)
+      expect(&.acos(0.5)).to be_within(tolerance).of(::Math::PI / 3)
     end
   end
 
   describe "#asin" do
     it "returns the inverse sine of a value" do
-      expect(&.asin(0.866025403784438)).to be_within(TOLERANCE).of(::Math::PI / 3)
+      expect(&.asin(0.866025403784438)).to be_within(tolerance).of(::Math::PI / 3)
     end
   end
 
   describe "#atan" do
     it "returns the inverse tangent of a value" do
-      expect(&.atan(1.732050807568877)).to be_within(TOLERANCE).of(::Math::PI / 3)
+      expect(&.atan(1.732050807568877)).to be_within(tolerance).of(::Math::PI / 3)
     end
   end
 
   describe "#atan2" do
     it "returns the inverst tangent of a value" do
       sqrt3 = ::Math.sqrt(3)
-      expect(&.atan2(sqrt3, 1)).to be_within(TOLERANCE).of(::Math::PI / 3)
+      expect(&.atan2(sqrt3, 1)).to be_within(tolerance).of(::Math::PI / 3)
     end
   end
 
   describe "#log" do
     it "returns the log of a value" do
-      expect(&.log(42)).to be_within(TOLERANCE).of(3.7376696182833684)
+      expect(&.log(42)).to be_within(tolerance).of(3.7376696182833684)
     end
   end
 
   describe "#log10" do
     it "returns the base-10 log of a value" do
-      expect(&.log10(42)).to be_within(TOLERANCE).of(1.6232492903979006)
+      expect(&.log10(42)).to be_within(tolerance).of(1.6232492903979006)
     end
   end
 
   describe "#exp" do
     it "returns the exponential of a value" do
-      expect(&.exp(5)).to be_within(TOLERANCE).of(148.413159102576603)
+      expect(&.exp(5)).to be_within(tolerance).of(148.413159102576603)
     end
   end
 
@@ -163,6 +162,66 @@ Spectator.describe Processing::Core::Math do
       pending "gets the maximum value" do
         expect(&.max(values)).to eq(78.9)
       end
+    end
+  end
+
+  describe "#constrain" do
+    it "returns low when amt is < low" do
+      expect(&.constrain(0, 5, 10)).to eq(5)
+    end
+
+    it "returns high when amt is > high" do
+      expect(&.constrain(20, 5, 10)).to eq(10)
+    end
+
+    it "returns amt when amt is > high and < low" do
+      expect(&.constrain(7, 5, 10)).to eq(7)
+    end
+  end
+
+  describe "#dist" do
+    context "2D" do
+      it "returns the distance between points" do
+        # 3-4-5 triangle
+        x1, y1 = {10, 20}
+        x2, y2 = {13, 24}
+        expect(&.dist(x1, y1, x2, y2)).to eq(5)
+      end
+    end
+
+    context "3D" do
+      it "returns the distance between points" do
+        # 3-4-5 triangle
+        x1, y1, z1 = {10, 20, 30}
+        x2, y2, z2 = {12, 22, 33}
+        expect(&.dist(x1, y1, z1, x2, y2, z2)).to be_within(tolerance).of(4.123105625617661)
+      end
+    end
+  end
+
+  describe "#lerp" do
+    it "returns start when amt is 0" do
+      expect(&.lerp(5.0, 10.0, 0.0)).to eq(5)
+    end
+
+    it "returns stop when amt is 1" do
+      expect(&.lerp(5.0, 10.0, 1.0)).to eq(10)
+    end
+
+    it "returns a mid-point when amt is between 0 and 1" do
+      expect(&.lerp(5.0, 10.0, 0.4)).to eq(7)
+    end
+  end
+
+  describe "#degrees" do
+    it "converts radians to degrees" do
+      expect(&.degrees(Math::PI / 3)).to be_within(tolerance).of(60)
+    end
+  end
+
+  describe "#radians" do
+    it "converts degrees to radians" do
+      expect(&.radians(60)).to be_within(tolerance).of(Math::PI / 3)
     end
   end
 end

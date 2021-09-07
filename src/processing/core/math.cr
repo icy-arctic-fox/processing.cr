@@ -10,15 +10,20 @@ module Processing
       end
 
       def constrain(amt, low, high)
-        not_implemented! # TODO
+        min(max(low, amt), high)
       end
 
       def dist(x1,y1, x2,y2)
-        not_implemented! # TODO
+        x = x2 - x1
+        y = y2 - y1
+        sqrt(x * x + y * y)
       end
 
       def dist(x1,y1,z1, x2,y2,z2)
-        not_implemented! # TODO
+        x = x2 - x1
+        y = y2 - y1
+        z = z2 - z1
+        sqrt(x * x + y * y + z * z)
       end
 
       def exp(value)
@@ -30,7 +35,7 @@ module Processing
       end
 
       def lerp(start : Float, stop : Float, amt : Float) : Float
-        not_implemented! # TODO
+        start * (1.0 - amt) + stop * amt
       end
 
       def log(n)
@@ -125,12 +130,12 @@ module Processing
         ::Math.cos(angle)
       end
 
-      def degress(radians)
-        not_implemented! # TODO
+      def degrees(radians)
+        radians / ::Math::PI * 180
       end
 
       def radians(degrees)
-        not_implemented! # TODO
+        degrees / 180 * ::Math::PI
       end
 
       def sin(angle)
