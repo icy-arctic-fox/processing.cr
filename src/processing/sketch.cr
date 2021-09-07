@@ -2,6 +2,7 @@ require "./core/color"
 require "./core/math"
 require "./core/rendering"
 require "./core/input/mouse"
+require "./core/input/keyboard"
 
 module Processing
   abstract class Sketch
@@ -9,6 +10,7 @@ module Processing
     include Core::Math
     include Core::Rendering
     include Core::Input::Mouse
+    include Core::Input::Keyboard
 
     def self.run
       Processing.run(new)
