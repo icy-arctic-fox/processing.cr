@@ -2,6 +2,10 @@
 
 This is an in-development port of the Processing software to Crystal.
 
+## Features
+
+* Tries to be Processing 4.x compatible.
+
 ## Installation
 
 > TODO
