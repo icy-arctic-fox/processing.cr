@@ -42,6 +42,11 @@ module Processing
     def draw
     end
 
+    def redraw
+      clear
+      draw
+    end
+
     def loop
       @loop = true
     end
