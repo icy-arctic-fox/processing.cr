@@ -96,12 +96,10 @@ module Processing
 
       def fill(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
         @fill_color = SDL::Color[v1, v2, v3]
-        renderer.draw_color = @fill_color.not_nil!
       end
 
       def fill(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
         @fill_color = SDL::Color[v1, v2, v3, alpha]
-        renderer.draw_color = @fill_color.not_nil!
       end
 
       def no_fill
@@ -132,12 +130,10 @@ module Processing
 
       def stroke(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
         @stroke_color = SDL::Color[v1, v2, v3]
-        renderer.draw_color = @stroke_color.not_nil!
       end
 
       def stroke(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
         @stroke_color = SDL::Color[v1, v2, v3, alpha]
-        renderer.draw_color = @stroke_color.not_nil!
       end
     end
   end

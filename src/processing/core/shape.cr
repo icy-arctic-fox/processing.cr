@@ -21,7 +21,15 @@ module Processing
       end
 
       def rect(x,y,width,height)
-        renderer.draw_rect(x,y,width,height)
+        if @fill_color
+          renderer.draw_color = @fill_color.not_nil!
+          renderer.fill_rect(x,y,width,height)
+        end
+
+        if @stroke_color
+          renderer.draw_color = @stroke_color.not_nil!
+          renderer.draw_rect(x,y,width,height)
+        end
       end
 
       def rect(x,y,width,height,r)
