@@ -17,23 +17,23 @@ module Processing
       end
 
       def blend_mode(mode : BlendMode)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def clip(a : Float, b : Float, c : Float, d : Float)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def create_graphics(w : Int, h : Int) : Graphics
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def create_graphics(w : Int, h : Int, renderer : String) : Graphics
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def create_graphics(w : Int, h : Int, renderer : String, path : String) : Graphics
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       enum Hint
@@ -48,11 +48,11 @@ module Processing
       end
 
       def hint(which : Hint)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def no_clip
-        # TODO: implement
+        not_implemented! # TODO
       end
     end
   end

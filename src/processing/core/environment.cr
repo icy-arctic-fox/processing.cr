@@ -10,7 +10,7 @@ module Processing
         @width  = width
 
         if @renderer
-          # TODO: implement updating the display window dimensions
+          not_implemented! # TODO: implement updating the display window dimensions
         end
       end
     end

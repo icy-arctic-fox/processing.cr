@@ -9,7 +9,7 @@ module Processing
           ::Time.local.day
         end
 
-        # 
+        #
         # The current hour (0 - 23).
         #
         def hour : Int32
@@ -20,7 +20,7 @@ module Processing
         # The number of milliseconds since the program started.
         #
         def millis : Int32
-          # TODO: implement
+          not_implemented! # TODO
         end
 
         #

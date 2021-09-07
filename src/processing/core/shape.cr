@@ -9,7 +9,7 @@ module Processing
       end
 
       def point(x,y,z)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def line(x1,y1, x2,y2)
@@ -17,7 +17,7 @@ module Processing
       end
 
       def line(x1,y1,z1, x2,y2,z2)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def rect(x,y,width,height)
@@ -33,11 +33,11 @@ module Processing
       end
 
       def rect(x,y,width,height,r)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def rect(x,y,width,height,tl,tr,br,bl)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def square(x,y,extent)

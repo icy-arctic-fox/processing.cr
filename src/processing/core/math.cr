@@ -10,15 +10,15 @@ module Processing
       end
 
       def constrain(amt, low, high)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def dist(x1,y1, x2,y2)
-        # TODO: impelment
+        not_implemented! # TODO
       end
 
       def dist(x1,y1,z1, x2,y2,z2)
-        # TODO: impelment
+        not_implemented! # TODO
       end
 
       def exp(value)
@@ -30,7 +30,7 @@ module Processing
       end
 
       def lerp(start : Float, stop : Float, amt : Float) : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def log(n)
@@ -42,15 +42,15 @@ module Processing
       end
 
       def mag(a : Float, b : Float) : Float
-        # TOOD: implement
+        not_implemented! # TODO
       end
 
       def mag(a : Float, b : Float, c : Float) : Float
-        # TOOD: implement
+        not_implemented! # TODO
       end
 
       def map(value : Float, start1 : Float, stop1 : Float, start2 : Float, stop2 : Float) : Float
-        # TOOD: implement
+        not_implemented! # TODO
       end
 
       def max(a,b)
@@ -62,11 +62,11 @@ module Processing
       end
 
       def max(list : Array(Int)) : Int
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def max(list : Array(Float)) : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def min(a,b)
@@ -78,15 +78,15 @@ module Processing
       end
 
       def min(list : Array(Int)) : Int
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def min(list : Array(Float)) : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def norm(value : Float, start : Float, stop : Float) : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def pow(n, e)
@@ -126,11 +126,11 @@ module Processing
       end
 
       def degress(radians)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def radians(degrees)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def sin(angle)
@@ -142,35 +142,35 @@ module Processing
       end
 
       def noise_detail(lod : Int)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def noise_detail(lod : Int, falloff : Float)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def noise_seed(seed : Int)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def noise(x : Float) : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def noise(x : Float, y : Float) : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def noise(x : Float, y : Float, z : Float) : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def random_gaussian : Float
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def random_seed(seed : Int)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def random(high : Float) : Float

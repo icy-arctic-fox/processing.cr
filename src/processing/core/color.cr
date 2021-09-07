@@ -12,11 +12,11 @@ module Processing
       # Sets the background color to a grayscale color.
       #
       def background(rgb : Int, alpha : Int | Float = 255)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def background(rgb : Int, alpha : Int | Float)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def background(gray : Int | Float)
@@ -57,37 +57,37 @@ module Processing
       end
 
       def color_mode(mode : ColorMode)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def color_mode(mode : ColorMode, max : Int | Float)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def color_mode(mode : ColorMode, max1 : Int | Float, max2 : Int | Float, max3 : Int | Float)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def color_mode(mode : ColorMode, max1 : Int | Float, max2 : Int | Float, max3 : Int | Float, maxA : Int | Float)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       @fill_color : SDL::Color?
 
       def fill(rgb : Int)
-        # TOOD: implement
+        not_implemented! # TODO
       end
 
       def fill(rgb : Int, alpha : Float)
-        # TOOD: implement
+        not_implemented! # TODO
       end
 
       def fill(rgb : Int)
-        # TOOD: implement
+        not_implemented! # TODO
       end
 
       def fill(rgb : Int, alpha : Int | Float)
-        # TOOD: implement
+        not_implemented! # TODO
       end
 
       def fill(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
@@ -109,11 +109,11 @@ module Processing
       end
 
       def stroke(rgb : Int)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def stroke(rgb : Int, alpha : Int | Float)
-        # TODO: implement
+        not_implemented! # TODO
       end
 
       def stroke(gray : Int | Float)
