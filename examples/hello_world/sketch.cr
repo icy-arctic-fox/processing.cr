@@ -8,6 +8,8 @@ class Sketch < Processing::Sketch
 
   def draw
     background(51)
+    stroke(255, 0, 0)
+    rect(20, 20, 100, 100)
   end
 end
 

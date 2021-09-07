@@ -2,7 +2,7 @@ require "./surface"
 require "./core/environment"
 require "./core/structure"
 require "./core/color"
-require "./core/color"
+require "./core/shape"
 require "./core/math"
 require "./core/rendering"
 require "./core/input/mouse"
@@ -14,6 +14,7 @@ module Processing
     include Core::Environment
     include Core::Structure
     include Core::Color
+    include Core::Shape
     include Core::Math
     include Core::Rendering
     include Core::Input::Mouse

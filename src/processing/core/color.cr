@@ -1,41 +1,47 @@
+require "sdl/color"
+
 module Processing
   module Core
     #
     # Implements the [Processing Color API](https://processing.org/reference/#color).
     #
     module Color
+      @background_color : SDL::Color?
+
       #
       # Sets the background color to a grayscale color.
       #
-      def background(rgb : UInt8, alpha : UInt8 = 255)
+      def background(rgb : Int, alpha : Int | Float = 255)
         background(rgb, rgb, rgb, alpha)
       end
 
       #
       # Sets the background color.
       #
-      def background(v1 : UInt8, v2 : UInt8, v3 : UInt8, alpha : UInt8 = 255)
-        renderer.draw_color = SDL::Color[v1, v2, v3, alpha]
+      def background(v1 : Int | Float, v2 : Int | Float, v3 : UInt | Float, alpha : Int | Float = 255)
+        @background_color = SDL::Color[v1, v2, v3, alpha]
+
+        renderer.draw_color = @background_color.not_nil!
         renderer.clear
       end
 
-      def background(rgb : UInt8, alpha : Float)
+      def background(rgb : Int, alpha : Int | Float)
         # TODO: implement
       end
 
-      def background(gray : Float)
+      def background(gray : Int | Float)
         # TODO: implement
       end
 
-      def background(gray : Float, alpha : Float)
+      def background(gray : Int | Float, alpha : Int | Float)
         # TODO: implement
       end
 
-      def background(v1 : Float, v2 : Float, v3 : Float)
+      def background(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
         # TODO: implement
       end
 
-      def background(v1 : Float, v2 : Float, v3 : Float, alpha : Float)
+      def background(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
         # TODO: implement
       end
 
@@ -58,72 +64,80 @@ module Processing
         # TODO: implement
       end
 
-      def color_mode(mode : ColorMode, max : Float)
+      def color_mode(mode : ColorMode, max : Int | Float)
         # TODO: implement
       end
 
-      def color_mode(mode : ColorMode, max1 : Float, max2 : Float, max3 : Float)
+      def color_mode(mode : ColorMode, max1 : Int | Float, max2 : Int | Float, max3 : Int | Float)
         # TODO: implement
       end
 
-      def color_mode(mode : ColorMode, max1 : Float, max2 : Float, max3 : Float, maxA : Float)
+      def color_mode(mode : ColorMode, max1 : Int | Float, max2 : Int | Float, max3 : Int | Float, maxA : Int | Float)
         # TODO: implement
       end
 
-      def fill(rgb : UInt8)
+      @fill_color : SDL::Color?
+
+      def fill(rgb : Int)
         # TOOD: implement
       end
 
-      def fill(rgb : UInt8, alpha : Float)
+      def fill(rgb : Int, alpha : Float)
         # TOOD: implement
       end
 
-      def fill(rgb : Float)
+      def fill(rgb : Int)
         # TOOD: implement
       end
 
-      def fill(rgb : Float, alpha : Float)
+      def fill(rgb : Int, alpha : Int | Float)
         # TOOD: implement
       end
 
-      def fill(v1 : UInt8, v2 : UInt8, v3 : UInt8)
-        # TOOD: implement
+      def fill(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
+        @fill_color = SDL::Color[v1, v2, v3]
+        renderer.draw_color = @fill_color.not_nil!
       end
 
-      def fill(v1 : UInt8, v2 : UInt8, v3 : UInt8, alpha : UInt8)
-        # TOOD: implement
+      def fill(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
+        @fill_color = SDL::Color[v1, v2, v3, alpha]
+        renderer.draw_color = @fill_color.not_nil!
       end
 
       def no_fill
-        # TOOD: implement
+        @fill_color = nil
       end
+
+      @stroke_color : SDL::Color?
 
       def no_stroke
+        @stroke_color = nil
+      end
+
+      def stroke(rgb : Int)
         # TODO: implement
       end
 
-      def stroke(rgb : UInt8)
+      def stroke(rgb : Int, alpha : Int | Float)
         # TODO: implement
       end
 
-      def stroke(rgb : UInt8, alpha : Float)
-        # TODO: implement
+      def stroke(gray : Int | Float)
+        stroke(gray, gray, gray)
       end
 
-      def stroke(gray : Float)
-        # TODO: implement
+      def stroke(gray : Int | Float, alpha : Int | Float)
+        stroke(gray, gray, gray, alpha)
       end
 
-      def stroke(gray : Float, alpha : Float)
-        # TODO: implement
+      def stroke(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
+        @stroke_color = SDL::Color[v1, v2, v3]
+        renderer.draw_color = @stroke_color.not_nil!
       end
 
-      def stroke(v1 : Float, v2 : Float, v3 : Float)
-        # TODO: implement
-      end
-
-      def stroke(v1 : Float, v2 : Float, v3 : Float, alpha : Float)
-        # TODO: implement
+      def stroke(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
+        @stroke_color = SDL::Color[v1, v2, v3, alpha]
+        renderer.draw_color = @stroke_color.not_nil!
       end
     end
   end
