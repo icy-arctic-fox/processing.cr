@@ -4,16 +4,16 @@ module Processing
   module Core
     module Rendering
       enum BlendMode
-        BLEND
-        ADD
-        SUBTRACT
-        DARKEST
-        LIGHTEST
-        DIFFERENCE
-        EXCLUSION
-        MULTIPLY
-        SCREEN
-        REPLACE
+        Blend
+        Add
+        Subtract
+        Darkest
+        Lightest
+        Difference
+        Exclusion
+        Multiply
+        Screen
+        Replace
       end
 
       def blend_mode(mode : BlendMode)
@@ -37,14 +37,14 @@ module Processing
       end
 
       enum Hint
-        ENABLE_STROKE_PURE
-        DISABLE_ASYNC_SAVEFRAME
-        DISABLE_OPENGL_ERRORS
-        DISABLE_DEPTH_MASK
-        ENABLE_DEPTH_SORT
-        DISABLE_DEPTH_TEST
-        DISABLE_OPTIMIZED_STROKE
-        ENABLE_STROKE_PERSPECTIVE
+        EnameStrokePure
+        DisableAsyncSaveFrame
+        DisableOpenGLErrors
+        DisableDepthMask
+        EnableDepthSort
+        DisableDepthTest
+        DisableOptimizedStroke
+        EnableStrokePerspective
       end
 
       def hint(which : Hint)
