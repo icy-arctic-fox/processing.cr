@@ -18,6 +18,13 @@ module Processing
         renderer.draw_color = SDL::Color[v1, v2, v3, alpha]
         renderer.clear
       end
+
+      #
+      # Clears the background using the current background color.
+      #
+      def clear
+        renderer.clear
+      end
     end
   end
 end
