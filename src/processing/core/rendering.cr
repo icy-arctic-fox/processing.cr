@@ -20,7 +20,7 @@ module Processing
         # TODO: implement
       end
 
-      def clip(a : Float32, b : Float32, c : Float32, d : Float32)
+      def clip(a : Float, b : Float, c : Float, d : Float)
         # TODO: implement
       end
 

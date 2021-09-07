@@ -19,23 +19,23 @@ module Processing
         renderer.clear
       end
 
-      def background(rgb : UInt8, alpha : Float32)
+      def background(rgb : UInt8, alpha : Float)
         # TODO: implement
       end
 
-      def background(gray : Float32)
+      def background(gray : Float)
         # TODO: implement
       end
 
-      def background(gray : Float32, alpha : Float32)
+      def background(gray : Float, alpha : Float)
         # TODO: implement
       end
 
-      def background(v1 : Float32, v2 : Float32, v3 : Float32)
+      def background(v1 : Float, v2 : Float, v3 : Float)
         # TODO: implement
       end
 
-      def background(v1 : Float32, v2 : Float32, v3 : Float32, alpha : Float32)
+      def background(v1 : Float, v2 : Float, v3 : Float, alpha : Float)
         # TODO: implement
       end
 
@@ -58,15 +58,15 @@ module Processing
         # TODO: implement
       end
 
-      def color_mode(mode : ColorMode, max : Float32)
+      def color_mode(mode : ColorMode, max : Float)
         # TODO: implement
       end
 
-      def color_mode(mode : ColorMode, max1 : Float32, max2 : Float32, max3 : Float32)
+      def color_mode(mode : ColorMode, max1 : Float, max2 : Float, max3 : Float)
         # TODO: implement
       end
 
-      def color_mode(mode : ColorMode, max1 : Float32, max2 : Float32, max3 : Float32, maxA : Float32)
+      def color_mode(mode : ColorMode, max1 : Float, max2 : Float, max3 : Float, maxA : Float)
         # TODO: implement
       end
 
@@ -74,15 +74,15 @@ module Processing
         # TOOD: implement
       end
 
-      def fill(rgb : UInt8, alpha : Float32)
+      def fill(rgb : UInt8, alpha : Float)
         # TOOD: implement
       end
 
-      def fill(rgb : Float32)
+      def fill(rgb : Float)
         # TOOD: implement
       end
 
-      def fill(rgb : Float32, alpha : Float32)
+      def fill(rgb : Float, alpha : Float)
         # TOOD: implement
       end
 
@@ -106,23 +106,23 @@ module Processing
         # TODO: implement
       end
 
-      def stroke(rgb : UInt8, alpha : Float32)
+      def stroke(rgb : UInt8, alpha : Float)
         # TODO: implement
       end
 
-      def stroke(gray : Float32)
+      def stroke(gray : Float)
         # TODO: implement
       end
 
-      def stroke(gray : Float32, alpha : Float32)
+      def stroke(gray : Float, alpha : Float)
         # TODO: implement
       end
 
-      def stroke(v1 : Float32, v2 : Float32, v3 : Float32)
+      def stroke(v1 : Float, v2 : Float, v3 : Float)
         # TODO: implement
       end
 
-      def stroke(v1 : Float32, v2 : Float32, v3 : Float32, alpha : Float32)
+      def stroke(v1 : Float, v2 : Float, v3 : Float, alpha : Float)
         # TODO: implement
       end
     end

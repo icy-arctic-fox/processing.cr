@@ -29,7 +29,7 @@ module Processing
         n.floor
       end
 
-      def lerp(start : Float32, stop : Float32, amt : Float32) : Float32
+      def lerp(start : Float, stop : Float, amt : Float) : Float
         # TODO: implement
       end
 
@@ -41,15 +41,15 @@ module Processing
         ::Math.log10(n)
       end
 
-      def mag(a : Float32, b : Float32) : Float32
+      def mag(a : Float, b : Float) : Float
         # TOOD: implement
       end
 
-      def mag(a : Float32, b : Float32, c : Float32) : Float32
+      def mag(a : Float, b : Float, c : Float) : Float
         # TOOD: implement
       end
 
-      def map(value : Float32, start1 : Float32, stop1 : Float32, start2 : Float32, stop2 : Float32) : Float32
+      def map(value : Float, start1 : Float, stop1 : Float, start2 : Float, stop2 : Float) : Float
         # TOOD: implement
       end
 
@@ -65,7 +65,7 @@ module Processing
         # TODO: implement
       end
 
-      def max(list : Array(Float32)) : Float32
+      def max(list : Array(Float)) : Float
         # TODO: implement
       end
 
@@ -81,11 +81,11 @@ module Processing
         # TODO: implement
       end
 
-      def min(list : Array(Float32)) : Float32
+      def min(list : Array(Float)) : Float
         # TODO: implement
       end
 
-      def norm(value : Float32, start : Float32, stop : Float32) : Float32
+      def norm(value : Float, start : Float, stop : Float) : Float
         # TODO: implement
       end
 
@@ -145,7 +145,7 @@ module Processing
         # TODO: implement
       end
 
-      def noise_detail(lod : Int, falloff : Float32)
+      def noise_detail(lod : Int, falloff : Float)
         # TODO: implement
       end
 
@@ -153,19 +153,19 @@ module Processing
         # TODO: implement
       end
 
-      def noise(x : Float32) : Float32
+      def noise(x : Float) : Float
         # TODO: implement
       end
 
-      def noise(x : Float32, y : Float32) : Float32
+      def noise(x : Float, y : Float) : Float
         # TODO: implement
       end
 
-      def noise(x : Float32, y : Float32, z : Float32) : Float32
+      def noise(x : Float, y : Float, z : Float) : Float
         # TODO: implement
       end
 
-      def random_gaussian : Float32
+      def random_gaussian : Float
         # TODO: implement
       end
 
@@ -173,11 +173,11 @@ module Processing
         # TODO: implement
       end
 
-      def random(high : Float32) : Float32
+      def random(high : Float) : Float
         rand(high)
       end
 
-      def random(low : Float32, high : Float32) : Float32
+      def random(low : Float, high : Float) : Float
         rand(low..high)
       end
 
