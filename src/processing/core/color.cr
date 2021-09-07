@@ -77,6 +77,10 @@ module Processing
       def no_fill
         # TOOD: implement
       end
+
+      def no_stroke
+        # TODO: implement
+      end
     end
   end
 end
