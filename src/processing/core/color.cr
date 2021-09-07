@@ -19,6 +19,26 @@ module Processing
         renderer.clear
       end
 
+      def background(rgb : UInt8, alpha : Float32)
+        # TODO: implement
+      end
+
+      def background(gray : Float32)
+        # TODO: implement
+      end
+
+      def background(gray : Float32, alpha : Float32)
+        # TODO: implement
+      end
+
+      def background(v1 : Float32, v2 : Float32, v3 : Float32)
+        # TODO: implement
+      end
+
+      def background(v1 : Float32, v2 : Float32, v3 : Float32, alpha : Float32)
+        # TODO: implement
+      end
+
       #
       # Clears the background using the current background color.
       #
