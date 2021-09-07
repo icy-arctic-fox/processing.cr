@@ -38,6 +38,10 @@ module Processing
       def cursor
         not_implemented!
       end
+
+      def delay(milliseconds : Int32)
+        sleep(milliseconds / 1000)
+      end
     end
   end
 end
