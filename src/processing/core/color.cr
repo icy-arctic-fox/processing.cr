@@ -73,6 +73,10 @@ module Processing
       def fill(v1 : UInt8, v2 : UInt8, v3 : UInt8, alpha : UInt8)
         # TOOD: implement
       end
+
+      def no_fill
+        # TOOD: implement
+      end
     end
   end
 end
