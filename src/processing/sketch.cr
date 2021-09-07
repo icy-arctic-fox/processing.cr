@@ -45,6 +45,8 @@ module Processing
     def redraw
       clear
       draw
+
+      @frame_count += 1
     end
 
     def loop
