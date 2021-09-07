@@ -105,6 +105,42 @@ module Processing
         ::Math.sqrt(n)
       end
 
+      def acos(value)
+        ::Math.acos(value)
+      end
+
+      def asin(value)
+        ::Math.asin(value)
+      end
+
+      def atan2(x,y)
+        ::Math.atan2(x,y)
+      end
+
+      def atan(value)
+        ::Math.atan(value)
+      end
+
+      def cos(angle)
+        ::Math.cos(angle)
+      end
+
+      def degress(radians)
+        # TODO: implement
+      end
+
+      def radians(degrees)
+        # TODO: implement
+      end
+
+      def sin(angle)
+        ::Math.sin(angle)
+      end
+
+      def tan(angle)
+        ::Math.tan(angle)
+      end
+
     end
   end
 end
