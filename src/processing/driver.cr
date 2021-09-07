@@ -3,7 +3,9 @@ module Processing
     def initialize(@sketch : Sketch)
       setup
 
-      @window = SDL::Window.new(@sketch.title, @sketch.width, @sketch.height)
+      @window = SDL::Window.new(
+        @sketch.surface.title, @sketch.width, @sketch.height
+      )
       @renderer = SDL::Renderer.new(@window)
       @sketch.renderer = @renderer
     end

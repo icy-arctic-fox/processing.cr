@@ -13,7 +13,6 @@ module Processing
           # TODO: implement updating the display window dimensions
         end
       end
-
     end
   end
 end

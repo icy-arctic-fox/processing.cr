@@ -1,3 +1,4 @@
+require "./surface"
 require "./core/environment"
 require "./core/structure"
 require "./core/color"
@@ -19,6 +20,8 @@ module Processing
     include Core::Input::Keyboard
     include Core::Input::Time
 
+    getter surface : Surface
+
     def self.run
       Processing.run(new)
     end
@@ -26,6 +29,10 @@ module Processing
     protected property! renderer : SDL::Renderer
 
     getter? loop : Bool = true
+
+    def initialize
+      @surface = Surface.new
+    end
 
     def setup
     end
