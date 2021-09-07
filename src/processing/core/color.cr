@@ -49,6 +49,30 @@ module Processing
       def color_mode(mode : ColorMode, max1 : Float32, max2 : Float32, max3 : Float32, maxA : Float32)
         # TODO: implement
       end
+
+      def fill(rgb : UInt8)
+        # TOOD: implement
+      end
+
+      def fill(rgb : UInt8, alpha : Float32)
+        # TOOD: implement
+      end
+
+      def fill(rgb : Float32)
+        # TOOD: implement
+      end
+
+      def fill(rgb : Float32, alpha : Float32)
+        # TOOD: implement
+      end
+
+      def fill(v1 : UInt8, v2 : UInt8, v3 : UInt8)
+        # TOOD: implement
+      end
+
+      def fill(v1 : UInt8, v2 : UInt8, v3 : UInt8, alpha : UInt8)
+        # TOOD: implement
+      end
     end
   end
 end
