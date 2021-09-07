@@ -6,6 +6,8 @@ module Processing
       @window = SDL::Window.new(
         @sketch.surface.title, @sketch.width, @sketch.height
       )
+      @window.fullscreen = @sketch.full_screen?
+
       @renderer = SDL::Renderer.new(@window)
       @sketch.renderer = @renderer
     end
