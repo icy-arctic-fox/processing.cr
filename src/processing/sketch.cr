@@ -4,6 +4,8 @@ module Processing
       Processing.run(new)
     end
 
+    protected property! renderer : SDL::Renderer
+
     getter? loop : Bool = true
 
     def setup

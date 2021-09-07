@@ -2,6 +2,8 @@ module Processing
   private class Driver
     def initialize(@sketch : Sketch)
       @window = SDL::Window.new("Processing", 640, 480)
+      @renderer = SDL::Renderer.new(@window)
+      @sketch.renderer = @renderer
     end
 
     def run
@@ -9,6 +11,7 @@ module Processing
         event = SDL::Event.wait
         break unless process_sdl_event(event)
         @sketch.draw
+        @renderer.present
         @window.update
         break unless @sketch.loop?
       end
