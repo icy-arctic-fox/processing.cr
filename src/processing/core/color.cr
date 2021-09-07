@@ -12,17 +12,7 @@ module Processing
       # Sets the background color to a grayscale color.
       #
       def background(rgb : Int, alpha : Int | Float = 255)
-        background(rgb, rgb, rgb, alpha)
-      end
-
-      #
-      # Sets the background color.
-      #
-      def background(v1 : Int | Float, v2 : Int | Float, v3 : UInt | Float, alpha : Int | Float = 255)
-        @background_color = SDL::Color[v1, v2, v3, alpha]
-
-        renderer.draw_color = @background_color.not_nil!
-        renderer.clear
+        # TODO: implement
       end
 
       def background(rgb : Int, alpha : Int | Float)
@@ -30,19 +20,25 @@ module Processing
       end
 
       def background(gray : Int | Float)
-        # TODO: implement
+        backgrond(gray,gray,gray)
       end
 
       def background(gray : Int | Float, alpha : Int | Float)
-        # TODO: implement
+        backgrond(gray,gray,gray,alpha)
       end
 
       def background(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
-        # TODO: implement
+        background(v1,v2,v3,255)
       end
 
-      def background(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
-        # TODO: implement
+      #
+      # Sets the background color.
+      #
+      def background(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float = 255)
+        @background_color = SDL::Color[v1, v2, v3, alpha]
+
+        renderer.draw_color = @background_color.not_nil!
+        renderer.clear
       end
 
       #
