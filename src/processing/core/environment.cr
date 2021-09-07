@@ -96,7 +96,10 @@ module Processing
       def smooth(level : Int32)
         case level
         when 2,4,8
-        @smooth = level
+          @smooth = level
+        else
+          raise(ArgumentError.new("smooth level must be 2, 4, or 8"))
+        end
       end
 
       def pixel_density(density : Int32)
