@@ -11,6 +11,7 @@ require "./core/input/time"
 
 module Processing
   abstract class Sketch
+    include Core::Constants
     include Core::Environment
     include Core::Structure
     include Core::Color
