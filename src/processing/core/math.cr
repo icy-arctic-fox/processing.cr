@@ -141,6 +141,46 @@ module Processing
         ::Math.tan(angle)
       end
 
+      def noise_detail(lod : Int)
+        # TODO: implement
+      end
+
+      def noise_detail(lod : Int, falloff : Float32)
+        # TODO: implement
+      end
+
+      def noise_seed(seed : Int)
+        # TODO: implement
+      end
+
+      def noise(x : Float32) : Float32
+        # TODO: implement
+      end
+
+      def noise(x : Float32, y : Float32) : Float32
+        # TODO: implement
+      end
+
+      def noise(x : Float32, y : Float32, z : Float32) : Float32
+        # TODO: implement
+      end
+
+      def random_gaussian : Float32
+        # TODO: implement
+      end
+
+      def random_seed(seed : Int)
+        # TODO: implement
+      end
+
+      def random(high : Float32) : Float32
+        rand(high)
+      end
+
+      def random(low : Float32, high : Float32) : Float32
+        rand(low..high)
+      end
+
     end
   end
 end
