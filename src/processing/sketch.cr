@@ -1,8 +1,8 @@
-require "./color"
+require "./core/color"
 
 module Processing
   abstract class Sketch
-    include Color
+    include Core::Color
 
     def self.run
       Processing.run(new)
