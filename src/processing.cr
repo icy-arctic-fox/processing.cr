@@ -17,9 +17,11 @@ module Processing
 
   private def startup
     SDL.init(SDL::Init::VIDEO)
+    @@started = true
   end
 
   private def shutdown
     SDL.quit
+    @@started = false
   end
 end
