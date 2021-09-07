@@ -11,6 +11,7 @@ module Processing
     end
 
     def setup
+      @sketch.settings
       @sketch.setup
     end
 
