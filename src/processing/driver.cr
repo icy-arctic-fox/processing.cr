@@ -17,7 +17,7 @@ module Processing
     private def process_sdl_event(event)
       case event
       when SDL::Event::Quit then false
-      else true
+      else                       true
       end
     end
   end
