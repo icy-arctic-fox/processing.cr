@@ -81,6 +81,30 @@ module Processing
       def no_stroke
         # TODO: implement
       end
+
+      def stroke(rgb : UInt8)
+        # TODO: implement
+      end
+
+      def stroke(rgb : UInt8, alpha : Float32)
+        # TODO: implement
+      end
+
+      def stroke(gray : Float32)
+        # TODO: implement
+      end
+
+      def stroke(gray : Float32, alpha : Float32)
+        # TODO: implement
+      end
+
+      def stroke(v1 : Float32, v2 : Float32, v3 : Float32)
+        # TODO: implement
+      end
+
+      def stroke(v1 : Float32, v2 : Float32, v3 : Float32, alpha : Float32)
+        # TODO: implement
+      end
     end
   end
 end
