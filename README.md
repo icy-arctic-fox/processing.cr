@@ -23,6 +23,12 @@ This is an in-development port of the Processing software to Crystal.
 - [ ] Core
     - [ ] Display
     - [ ] System
+- [ ] Data
+    - [X] Primitives
+    - [ ] Composite
+    - [X] Conversions
+    - [ ] String Functions
+    - [ ] Array Functions
 - [ ] Drawing
     - [ ] Primitives
     - [ ] Curves
