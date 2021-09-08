@@ -5,7 +5,7 @@ module Processing
 
       HALF_PI = PI / 2.0
 
-      QUATER_PI = PI / 4.0
+      QUARTER_PI = PI / 4.0
 
       TAU = ::Math::TAU
 
