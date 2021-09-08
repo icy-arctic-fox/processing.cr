@@ -127,7 +127,7 @@ Spectator.describe Processing::Core::Math do
     context "with a list of integers" do
       let(values) { [123, 456, 789, 42, 777] }
 
-      pending "gets the minimum value" do
+      it "gets the minimum value" do
         expect(&.min(values)).to eq(42)
       end
     end
@@ -135,7 +135,7 @@ Spectator.describe Processing::Core::Math do
     context "with a list of floats" do
       let(values) { [12.3, 45.6, 78.9, 4.2, 77.7] }
 
-      pending "gets the minimum value" do
+      it "gets the minimum value" do
         expect(&.min(values)).to eq(4.2)
       end
     end
@@ -151,7 +151,7 @@ Spectator.describe Processing::Core::Math do
     context "with a list of integers" do
       let(values) { [123, 456, 789, 42, 777] }
 
-      pending "gets the maximum value" do
+      it "gets the maximum value" do
         expect(&.max(values)).to eq(789)
       end
     end
@@ -159,7 +159,7 @@ Spectator.describe Processing::Core::Math do
     context "with a list of floats" do
       let(values) { [12.3, 45.6, 78.9, 4.2, 77.7] }
 
-      pending "gets the maximum value" do
+      it "gets the maximum value" do
         expect(&.max(values)).to eq(78.9)
       end
     end
@@ -222,6 +222,42 @@ Spectator.describe Processing::Core::Math do
   describe "#radians" do
     it "converts degrees to radians" do
       expect(&.radians(60)).to be_within(tolerance).of(Math::PI / 3)
+    end
+  end
+
+  describe "#mag" do
+    it "computes the magnitude of a 2D vector" do
+      expect(&.mag(3.0, 4.0)).to be_within(tolerance).of(5)
+    end
+
+    it "computes the magnitude of a 3D vector" do
+      expect(&.mag(1.0, 2.0, 3.0)).to be_within(tolerance).of(3.741657386773941)
+    end
+  end
+
+  describe "#norm" do
+    it "normalizes a value to the specified range" do
+      expect(&.norm(12.0, 10.0, 20.0)).to be_within(tolerance).of(0.2)
+    end
+
+    it "doesn't clamp between 0 and 1" do
+      aggregate_failures "upper and lower" do
+        expect(&.norm(5.0, 10.0, 20.0)).to be_within(tolerance).of(-0.5)
+        expect(&.norm(30.0, 10.0, 20.0)).to be_within(tolerance).of(2.0)
+      end
+    end
+  end
+
+  describe "#map" do
+    it "transforms a value from one range to another" do
+      expect(&.map(12.0, 10.0, 20.0, 0.0, 50.0)).to be_within(tolerance).of(10.0)
+    end
+
+    it "doesn't clamp to the second range" do
+      aggregate_failures "upper and lower" do
+        expect(&.map(5.0, 10.0, 20.0, 0.0, 50.0)).to be_within(tolerance).of(-25.0)
+        expect(&.map(30.0, 10.0, 20.0, 0.0, 50.0)).to be_within(tolerance).of(100.0)
+      end
     end
   end
 end

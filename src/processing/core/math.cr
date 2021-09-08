@@ -47,15 +47,15 @@ module Processing
       end
 
       def mag(a : Float, b : Float) : Float
-        not_implemented! # TODO
+        sqrt(a * a + b * b)
       end
 
       def mag(a : Float, b : Float, c : Float) : Float
-        not_implemented! # TODO
+        sqrt(a * a + b * b + c * c)
       end
 
       def map(value : Float, start1 : Float, stop1 : Float, start2 : Float, stop2 : Float) : Float
-        not_implemented! # TODO
+        lerp(start2, stop2, norm(value, start1, stop1))
       end
 
       def max(a,b)
@@ -67,11 +67,11 @@ module Processing
       end
 
       def max(list : Array(Int)) : Int
-        not_implemented! # TODO
+        list.max
       end
 
       def max(list : Array(Float)) : Float
-        not_implemented! # TODO
+        list.max
       end
 
       def min(a,b)
@@ -83,15 +83,15 @@ module Processing
       end
 
       def min(list : Array(Int)) : Int
-        not_implemented! # TODO
+        list.min
       end
 
       def min(list : Array(Float)) : Float
-        not_implemented! # TODO
+        list.min
       end
 
       def norm(value : Float, start : Float, stop : Float) : Float
-        not_implemented! # TODO
+        (value - start) / (stop - start)
       end
 
       def pow(n, e)
