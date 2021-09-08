@@ -24,6 +24,23 @@ module Processing
       initialize(r.to_u8,g.to_u8,b.to_u8,a.to_u8)
     end
 
+    #
+    # Unpacks the color from a 32bit integer.
+    #
+    # * Bits 24-31: alpha
+    # * Bits 16-23: red
+    # * Bits 8-15: green
+    # * Bits 0-7: blue
+    #
+    def self.unpack(int : Int32 | UInt32) : Color
+      new(
+        r: (int & 0xff0000) >> 16,
+        g: (int & 0xff00) >> 8,
+        b: (int & 0xff),
+        a: (int & 0xff000000) >> 24
+      )
+    end
+
     @[AlwaysInline]
     def red
       @r
