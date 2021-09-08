@@ -48,6 +48,74 @@ module Processing
         renderer.clear
       end
 
+      def red(color : Color) : UInt8
+        color.red
+      end
+
+      def red(color : Int) : UInt8
+        not_implemented!
+      end
+
+      def green(color : Color) : UInt8
+        color.green
+      end
+
+      def green(color : Int) : UInt8
+        not_implemented!
+      end
+
+      def blue(color : Color) : UInt8
+        color.blue
+      end
+
+      def blue(color : Int) : UInt8
+        not_implemented!
+      end
+
+      def alpha(color : Color) : UInt8
+        color.alpha
+      end
+
+      def alpha(color : Int) : UInt8
+        not_implemented!
+      end
+
+      def brightness(color : Color) : Float
+        not_implemented!
+      end
+
+      def brightness(color : Int) : Float
+        not_implemented!
+      end
+
+      def hue(color : Color) : UInt8
+        not_implemented!
+      end
+
+      def hue(color : Int) : UInt8
+        not_implemented!
+      end
+
+      def saturation(color : Color) : UInt8
+        not_implemented!
+      end
+
+      def saturation(color : Int) : UInt8
+        not_implemented!
+      end
+
+      def lerp_color(c1 : Int, c2 : Int, amt : Float) : Color
+        not_implemented!
+      end
+
+      def color(gray : Int | Float, alpha : Int | Float = 255) : Color
+        Color.new(gray.to_u8,alpha)
+      end
+
+      def color(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float = 255) : Color
+        Color.new(v1,v2,v3,alpha)
+      end
+
       #
       # Defines the available color modes.
       #
