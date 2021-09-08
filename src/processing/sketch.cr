@@ -1,4 +1,5 @@
 require "./surface"
+require "./style"
 require "./types"
 require "./core/environment"
 require "./core/structure"
