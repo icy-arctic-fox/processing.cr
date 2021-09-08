@@ -26,29 +26,29 @@ module Processing
 
     @[AlwaysInline]
     def red
-      r
+      @r
     end
 
     @[AlwaysInline]
     def green
-      g
+      @g
     end
 
     @[AlwaysInline]
     def blue
-      b
+      @b
     end
 
     @[AlwaysInline]
     def alpha
-      a
+      @a
     end
 
     #
     # Converts the color to an 32bit integer.
     #
     def to_i : Int32
-      blue.to_i32 | (green.to_i32 << 8) | (red.to_i32 << 16) | (alpha.to_i32 << 24)
+      @b.to_i32 | (@g.to_i32 << 8) | (@r.to_i32 << 16) | (@a.to_i32 << 24)
     end
 
   end
