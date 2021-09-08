@@ -47,6 +47,11 @@ module Processing
     #
     # Converts the color to an 32bit integer.
     #
+    # * Bits 24-31: alpha
+    # * Bits 16-23: red
+    # * Bits 8-15: green
+    # * Bits 0-7: blue
+    #
     def to_i : Int32
       @b.to_i32 | (@g.to_i32 << 8) | (@r.to_i32 << 16) | (@a.to_i32 << 24)
     end
