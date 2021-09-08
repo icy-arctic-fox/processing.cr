@@ -39,6 +39,9 @@ module Processing
 
     def initialize
       @surface = Surface.new
+
+      @style_stack = Array(Style).new
+      push_style
     end
 
     def setup
@@ -60,6 +63,20 @@ module Processing
 
     def no_loop
       @loop = false
+    end
+
+    def push_style
+      @style = Style.new
+      @style_stack.push(@style.not_nil!)
+    end
+
+    def pop_style
+      @style = @style_stack.pop
+      return
+    end
+
+    def style : Style
+      @style.not_nil!
     end
   end
 end

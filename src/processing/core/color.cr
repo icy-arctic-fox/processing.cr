@@ -6,8 +6,6 @@ module Processing
     # Implements the [Processing Color API](https://processing.org/reference/#color).
     #
     module Color
-      @background_color : SDL::Color?
-
       #
       # Sets the background color to a grayscale color.
       #
@@ -35,9 +33,11 @@ module Processing
       # Sets the background color.
       #
       def background(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float = 255)
-        @background_color = SDL::Color[v1, v2, v3, alpha]
+        sdl_color = SDL::Color[v1, v2, v3, alpha]
 
-        renderer.draw_color = @background_color.not_nil!
+        style.background_color = sdl_color
+
+        renderer.draw_color = sdl_color
         renderer.clear
       end
 
@@ -140,8 +140,6 @@ module Processing
         not_implemented! # TODO
       end
 
-      @fill_color : SDL::Color?
-
       def fill(rgb : Int)
         not_implemented! # TODO
       end
@@ -159,21 +157,19 @@ module Processing
       end
 
       def fill(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
-        @fill_color = SDL::Color[v1, v2, v3]
+        style.fill_color = SDL::Color[v1, v2, v3]
       end
 
       def fill(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
-        @fill_color = SDL::Color[v1, v2, v3, alpha]
+        style.fill_color = SDL::Color[v1, v2, v3, alpha]
       end
 
       def no_fill
-        @fill_color = nil
+        style.fill_color = nil
       end
 
-      @stroke_color : SDL::Color?
-
       def no_stroke
-        @stroke_color = nil
+        style.stroke_color = nil
       end
 
       def stroke(rgb : Int)
@@ -193,11 +189,11 @@ module Processing
       end
 
       def stroke(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
-        @stroke_color = SDL::Color[v1, v2, v3]
+        style.stroke_color = SDL::Color[v1, v2, v3]
       end
 
       def stroke(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float)
-        @stroke_color = SDL::Color[v1, v2, v3, alpha]
+        style.stroke_color = SDL::Color[v1, v2, v3, alpha]
       end
     end
   end

@@ -21,13 +21,13 @@ module Processing
       end
 
       def rect(x,y,width,height)
-        if @fill_color
-          renderer.draw_color = @fill_color.not_nil!
+        if style.fill_color
+          renderer.draw_color = style.fill_color.not_nil!
           renderer.fill_rect(x,y,width,height)
         end
 
-        if @stroke_color
-          renderer.draw_color = @stroke_color.not_nil!
+        if style.stroke_color
+          renderer.draw_color = style.stroke_color.not_nil!
           renderer.draw_rect(x,y,width,height)
         end
       end
