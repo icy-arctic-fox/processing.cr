@@ -44,5 +44,12 @@ module Processing
       a
     end
 
+    #
+    # Converts the color to an 32bit integer.
+    #
+    def to_i : Int32
+      blue.to_i32 | (green.to_i32 << 8) | (red.to_i32 << 16) | (alpha.to_i32 << 24)
+    end
+
   end
 end
