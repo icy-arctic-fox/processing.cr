@@ -16,6 +16,14 @@ module Processing
     def initialize(@r : UInt8, @g : UInt8, @b : UInt8, @a : UInt8 = 255)
     end
 
+    def initialize(r : Int | Float, g : Int | Float, b : Int | Float)
+      initialize(r.to_u8,g.to_u8,b.to_u8)
+    end
+
+    def initialize(r : Int | Float, g : Int | Float, b : Int | Float, a : Int | Float)
+      initialize(r.to_u8,g.to_u8,b.to_u8,a.to_u8)
+    end
+
     @[AlwaysInline]
     def red
       r
