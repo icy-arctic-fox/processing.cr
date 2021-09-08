@@ -47,6 +47,7 @@ This is an in-development port of the Processing software to Crystal.
     - [X] Time
     - [ ] Files
 - [ ] Output
+    - [X] Printing
     - [ ] Save Frame
     - [ ] Files
 - [ ] Math

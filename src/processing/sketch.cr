@@ -10,6 +10,7 @@ require "./core/input/mouse"
 require "./core/input/keyboard"
 require "./core/input/time"
 require "./core/data/conversion"
+require "./core/output/printing"
 
 module Processing
   abstract class Sketch
@@ -24,6 +25,7 @@ module Processing
     include Core::Input::Keyboard
     include Core::Input::Time
     include Core::Data::Conversion
+    include Core::Output::Printing
 
     getter surface : Surface
 
