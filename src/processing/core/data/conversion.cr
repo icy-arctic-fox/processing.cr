@@ -1,3 +1,5 @@
+require "../../types"
+
 module Processing
   module Core
     module Data
@@ -13,8 +15,6 @@ module Processing
         def boolean(value : String) : Bool
           value == "true"
         end
-
-        alias Byte = UInt8
 
         def byte(char : Char) : Byte
           char.to_u8
