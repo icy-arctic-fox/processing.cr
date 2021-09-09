@@ -20,6 +20,7 @@ module Processing
     include Core::Structure
     include Core::Color
     include Core::Shape
+    include Core::Shape::Primitives2D
     include Core::Math
     include Core::Rendering
     include Core::Input::Mouse
