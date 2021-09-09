@@ -21,6 +21,10 @@ module Processing
       def create_shape(type : ShapeType, *points)
         not_implemented!
       end
+
+      def load_shape(path : String)
+        not_implemented!
+      end
     end
   end
 end
