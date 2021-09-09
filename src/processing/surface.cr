@@ -1,4 +1,7 @@
 module Processing
+  #
+  # Equivalent of `PSurface`.
+  #
   class Surface
     # The current window title.
     getter title : String = "Processing"

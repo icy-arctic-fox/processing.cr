@@ -1,4 +1,7 @@
 module Processing
+  #
+  # Equivalent of `java.awt.Color`.
+  #
   struct Color
 
     property r : UInt8

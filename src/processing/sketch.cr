@@ -14,6 +14,9 @@ require "./core/data/conversion"
 require "./core/output/printing"
 
 module Processing
+  #
+  # Equivalent of `PApplet`.
+  #
   abstract class Sketch
     include Core::Constants
     include Core::Environment
