@@ -1,4 +1,5 @@
 require "./shape/primitives_2d"
+require "../shape"
 
 module Processing
   module Core
@@ -14,15 +15,15 @@ module Processing
         Line
       end
 
-      def create_shape
+      def create_shape : Processing::Shape
         not_implemented!
       end
 
-      def create_shape(type : ShapeType, *points)
+      def create_shape(type : ShapeType, *points) : Processing::Shape
         not_implemented!
       end
 
-      def load_shape(path : String)
+      def load_shape(path : String) : Processing::Shape
         not_implemented!
       end
     end
