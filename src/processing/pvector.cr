@@ -69,79 +69,149 @@ module Processing
     end
 
     def mag
-      not_implemented!
+      Math.sqrt(mag_sq)
     end
 
     def mag_sq
-      not_implemented!
+      @x * @x + @y * @y + @z * @z
     end
 
-    def add(v)
-      not_implemented!
+    def add(v) : self
+      @x += v.x
+      @y += v.y
+      @z += v.z
+      self
     end
 
-    def add(x : Float32, y : Float32, z : Float32 = 0)
-      not_implemented!
+    def add(x : Float32, y : Float32) : self
+      @x += x
+      @y += y
+      self
     end
 
-    def self.add(v1, v2)
-      not_implemented!
+    def add(x : Float32, y : Float32, z : Float32) : self
+      @x += x
+      @y += y
+      @z += z
+      self
     end
 
-    def self.add(v1, v2, target)
-      not_implemented!
+    def self.add(v1, v2, target) : self
+      x = v1.x + v2.x
+      y = v1.y + v2.y
+      z = v1.z + v2.z
+      target.set(x, y, z)
     end
 
-    def +(v)
-      not_implemented!
+    def self.add(v1, v2, target : Nil = nil) : self
+      x = v1.x + v2.x
+      y = v1.y + v2.y
+      z = v1.z + v2.z
+      new(x, y, z)
     end
 
-    def sub(v)
-      not_implemented!
+    def +(v) : self
+      x = @x + v.x
+      y = @y + v.y
+      z = @z + v.z
+      self.class.new(x, y, z)
     end
 
-    def sub(x : Float32, y : Float32, z : Float32 = 0)
-      not_implemented!
+    def sub(v) : self
+      @x -= v.x
+      @y -= v.y
+      @z -= v.z
+      self
     end
 
-    def self.sub(v1, v2)
-      not_implemented!
+    def sub(x : Float32, y : Float32) : self
+      @x -= x
+      @y -= y
+      self
     end
 
-    def self.sub(v1, v2, target)
-      not_implemented!
+    def sub(x : Float32, y : Float32, z : Float32) : self
+      @x -= x
+      @y -= y
+      @z -= z
+      self
     end
 
-    def mult(n : Float32)
-      not_implemented!
+    def self.sub(v1, v2, target) : self
+      x = v1.x - v2.x
+      y = v1.y - v2.y
+      z = v1.z - v2.z
+      target.set(x, y, z)
     end
 
-    def self.mult(v, n : Float32)
-      not_implemented!
+    def self.sub(v1, v2, target : Nil = nil) : self
+      x = v1.x - v2.x
+      y = v1.y - v2.y
+      z = v1.z - v2.z
+      new(x, y, z)
     end
 
-    def self.mult(v, n : Float32, target)
-      not_implemented!
+    def -(v) : self
+      x = @x - v.x
+      y = @y - v.y
+      z = @z - v.z
+      self.class.new(x, y, z)
     end
 
-    def *(n : Float32)
-      not_implemented!
+    def mult(n : Float32) : self
+      @x *= n
+      @y *= n
+      @z *= n
+      self
     end
 
-    def div(n : Float32)
-      not_implemented!
+    def self.mult(v, n : Float32, target) : self
+      x = v.x * n
+      y = v.y * n
+      z = v.z * n
+      target.set(x, y, z)
     end
 
-    def self.div(v, n : Float32)
-      not_implemented!
+    def self.mult(v, n : Float32, target : Nil = nil) : self
+      x = v.x * n
+      y = v.y * n
+      z = v.z * n
+      new(x, y, z)
     end
 
-    def self.div(v, n : Float32, target)
-      not_implemented!
+    def *(n : Float32) : self
+      x = @x * n
+      y = @y * n
+      z = @z * n
+      self.class.new(x, y, z)
     end
 
-    def /(n : Float32)
-      not_implemented!
+    def div(n : Float32) : self
+      @x /= n
+      @y /= n
+      @z /= n
+      self
+    end
+
+    def self.div(v, n : Float32, target) : self
+      x = v.x / n
+      y = v.y / n
+      z = v.z / n
+      target.set(x, y, z)
+    end
+
+    def self.div(v, n : Float32, target : Nil = nil) : self
+      x = v.x / n
+      y = v.y / n
+      z = v.z / n
+      new(x, y, z)
+    end
+
+    def /(n : Float32) : self
+      x = @x / n
+      y = @y / n
+      z = @z / n
+      self.class.new(x, y, z)
     end
 
     def dist(v)
