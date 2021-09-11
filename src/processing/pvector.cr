@@ -15,6 +15,8 @@ module Processing
     def initialize(@x : Float32, @y : Float32, @z : Float32 = 0)
     end
 
+    def_equals_and_hash @x, @y, @z
+
     def self.random_2d
       not_implemented!
     end
@@ -215,79 +217,156 @@ module Processing
     end
 
     def dist(v)
-      not_implemented!
+      self.class.dist(self, v)
     end
 
     def self.dist(v1, v2)
-      not_implemented!
+      x = v2.x - v1.x
+      y = v2.y - v1.y
+      z = v2.z - v1.z
+      Math.sqrt(x * x + y * y + z * z)
     end
 
     def dot(v)
-      not_implemented!
+      self.class.dot(self, v)
     end
 
     def dot(x : Float32, y : Float32, z : Float32)
-      not_implemented!
+      @x * x + @y * y + @z * z
     end
 
     def self.dot(v1, v2)
-      not_implemented!
-    end
-
-    def cross(v)
-      not_implemented!
+      x = v1.x * v2.x
+      y = v1.y * v2.y
+      z = v1.z * v2.z
+      x + y + z
     end
 
     def cross(v, target)
-      not_implemented!
+      x = @y * v.z - @z * v.y
+      y = @z * v.x - @x * v.z
+      z = @x * v.y - @y * v.x
+      target.set(x, y, z)
+    end
+
+    def cross(v, target : Nil = nil)
+      x = @y * v.z - @z * v.y
+      y = @z * v.x - @x * v.z
+      z = @x * v.y - @y * v.x
+      self.class.new(x, y, z)
     end
 
     def self.cross(v1, v2, target)
-      not_implemented!
+      x = v1.y * v2.z - v1.z * v2.y
+      y = v1.z * v2.x - v1.x * v2.z
+      z = v1.x * v2.y - v1.y * v2.x
+      target.set(x, y, z)
+    end
+
+    def self.cross(v1, v2, target : Nil = nil)
+      x = v1.y * v2.z - v1.z * v2.y
+      y = v1.z * v2.x - v1.x * v2.z
+      z = v1.x * v2.y - v1.y * v2.x
+      new(x, y, z)
     end
 
     def normalize
-      not_implemented!
+      mag = self.mag
+      return self if mag == 0 || mag == 1
+
+      div(mag)
     end
 
     def normalize(target)
-      not_implemented!
+      mag = self.mag
+      if mag == 0 || mag == 1
+        target.set(@x, @y, @z)
+      else
+        div(mag, target)
+      end
+    end
+
+    def normalize(target : Nil = nil)
+      mag = self.mag
+      if mag == 0 || mag == 1
+        self.class.new(@x, @y, @z)
+      else
+        self / mag
+      end
     end
 
     def limit(max)
-      not_implemented!
+      max_sq = max * max
+      if mag_sq > max_sq
+        normalize
+        mult(max)
+      end
+      self
     end
 
     def set_mag(len)
-      not_implemented!
+      normalize
+      mult(len)
+      self
     end
 
     def set_mag(target, len)
-      not_implemented!
+      target = normalize(target)
+      target.mult(len)
     end
 
     def heading
-      not_implemented!
+      Math.atan2(@y, @x)
+    end
+
+    def heading=(angle)
+      mag = self.mag
+      @x = mag * Math.cos(angle)
+      @y = mag * Math.sin(angle)
+      angle
     end
 
     def rotate(theta)
-      not_implemented!
+      x = @x
+      @x = Math.cos(theta) * x - Math.sin(theta) * @y
+      @y = Math.sin(theta) * x + Math.cos(theta) * @y
+      self
     end
 
     def lerp(v, amt)
-      not_implemented!
+      @x = lerp_component(@x, v.x, amt)
+      @y = lerp_component(@y, v.y, amt)
+      @z = lerp_component(@z, v.z, amt)
+      self
     end
 
     def lerp(x : Float32, y : Float32, z : Float32, amt)
-      not_implemented!
+      @x = lerp_component(@x, x, amt)
+      @y = lerp_component(@y, y, amt)
+      @z = lerp_component(@z, z, amt)
     end
 
     def self.lerp(v1, v2, amt)
-      not_implemented!
+      x = lerp_component(v1.x, v2.x, amt)
+      y = lerp_component(v1.y, v2.y, amt)
+      z = lerp_component(v1.z, v2.z, amt)
+      new(x, y, z)
     end
 
     def self.angle_between(v1, v2)
-      not_implemented!
+      return 0.0 if v1.x == 0 && v1.y == 0 && v1.z == 0
+      return 0.0 if v2.x == 0 && v2.y == 0 && v2.z == 0
+
+      dot = v1.x * v2.x + v1.y * v2.y + v1.z * v2.z
+      v1_mag = Math.sqrt(v1.x * v1.x + v1.y * v1.y + v1.z * v1.z)
+      v2_mag = Math.sqrt(v2.x * v2.x + v2.y * v2.y + v2.z * v2.z)
+      value = dot / (v1_mag * v2_mag)
+
+      case value
+      when .<= -1 then Math::PI
+      when .>= 1  then 0.0
+      else             Math.acos(value)
+      end
     end
 
     def array
@@ -296,6 +375,20 @@ module Processing
 
     def to_a
       [@x, @y, @z]
+    end
+
+    def to_s(io)
+      io << "[ " << @x << ", " << @y << ", " << @z << " ]"
+    end
+
+    # FIXME: Remove this code duplication.
+
+    private def lerp_component(a, b, t)
+      a * (1.0 - t) + b * t
+    end
+
+    private def self.lerp_component(a, b, t)
+      a * (1.0 - t) + b * t
     end
   end
 end
