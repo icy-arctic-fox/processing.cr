@@ -35,32 +35,32 @@ module Processing
       not_implemented!
     end
 
-    def copy
+    def copy : self
       dup
     end
 
-    def set(x : Float32, y : Float32, z : Float32 = 0)
+    def set(x : Float32, y : Float32, z : Float32 = 0) : self
       @x = x
       @y = y
       @z = z
       self
     end
 
-    def set(v)
-      @x = v.x
-      @y = v.y
-      @z = v.z
+    def set(v) : self
+      @x = v.x.to_f32
+      @y = v.y.to_f32
+      @z = v.z.to_f32
       self
     end
 
-    def set(source : Indexable(Float))
+    def set(source : Indexable(Float)) : self
       if source.size >= 2
-        @x = source[0]
-        @y = source[1]
+        @x = source[0].to_f32
+        @y = source[1].to_f32
       end
 
       if source.size > 2
-        @z = source[2]
+        @z = source[2].to_f32
       else
         @z = 0
       end
@@ -221,6 +221,10 @@ module Processing
     end
 
     def array
+      [@x, @y, @z]
+    end
+
+    def to_a
       [@x, @y, @z]
     end
   end
