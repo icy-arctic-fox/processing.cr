@@ -12,7 +12,7 @@ module Processing
       @z = 0
     end
 
-    def initialize(@x, @y, @z = 0)
+    def initialize(@x : Float32, @y : Float32, @z : Float32 = 0)
     end
 
     def self.random_2d
@@ -39,7 +39,7 @@ module Processing
       dup
     end
 
-    def set(x, y, z = 0)
+    def set(x : Float32, y : Float32, z : Float32 = 0)
       @x = x
       @y = y
       @z = z
@@ -80,7 +80,7 @@ module Processing
       not_implemented!
     end
 
-    def add(x, y, z = 0)
+    def add(x : Float32, y : Float32, z : Float32 = 0)
       not_implemented!
     end
 
@@ -100,7 +100,7 @@ module Processing
       not_implemented!
     end
 
-    def sub(x, y, z = 0)
+    def sub(x : Float32, y : Float32, z : Float32 = 0)
       not_implemented!
     end
 
@@ -112,35 +112,35 @@ module Processing
       not_implemented!
     end
 
-    def mult(n)
+    def mult(n : Float32)
       not_implemented!
     end
 
-    def self.mult(v, n)
+    def self.mult(v, n : Float32)
       not_implemented!
     end
 
-    def self.mult(v, n, target)
+    def self.mult(v, n : Float32, target)
       not_implemented!
     end
 
-    def *(n)
+    def *(n : Float32)
       not_implemented!
     end
 
-    def div(n)
+    def div(n : Float32)
       not_implemented!
     end
 
-    def self.div(v, n)
+    def self.div(v, n : Float32)
       not_implemented!
     end
 
-    def self.div(v, n, target)
+    def self.div(v, n : Float32, target)
       not_implemented!
     end
 
-    def /(n)
+    def /(n : Float32)
       not_implemented!
     end
 
@@ -156,7 +156,7 @@ module Processing
       not_implemented!
     end
 
-    def dot(x, y, z)
+    def dot(x : Float32, y : Float32, z : Float32)
       not_implemented!
     end
 
@@ -208,7 +208,7 @@ module Processing
       not_implemented!
     end
 
-    def lerp(x, y, z, amt)
+    def lerp(x : Float32, y : Float32, z : Float32, amt)
       not_implemented!
     end
 
