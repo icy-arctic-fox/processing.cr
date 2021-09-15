@@ -2,7 +2,7 @@ require "../spec_helper"
 
 Spectator.describe Processing::PVector do
   subject(vector) { described_class.new(12.3, 45.6, 78.9) }
-  let(tolerance) { Float32::EPSILON * 10 }
+  let(tolerance) { 0.0001 }
 
   it "defaults to zeroes" do
     vector = described_class.new
@@ -127,9 +127,9 @@ Spectator.describe Processing::PVector do
       it "adds to the vector" do
         vector.add(other)
         aggregate_failures "coordinates" do
-          expect(vector.x).to be_within(0.00001).of(22.3)
-          expect(vector.y).to be_within(0.00001).of(65.6)
-          expect(vector.z).to be_within(0.00001).of(108.9)
+          expect(vector.x).to be_within(tolerance).of(22.3)
+          expect(vector.y).to be_within(tolerance).of(65.6)
+          expect(vector.z).to be_within(tolerance).of(108.9)
         end
       end
 
@@ -143,9 +143,9 @@ Spectator.describe Processing::PVector do
       it "adds to the vector" do
         vector.add(10.0, 20.0)
         aggregate_failures "coordinates" do
-          expect(vector.x).to be_within(0.00001).of(22.3)
-          expect(vector.y).to be_within(0.00001).of(65.6)
-          expect(vector.z).to be_within(0.00001).of(78.9)
+          expect(vector.x).to be_within(tolerance).of(22.3)
+          expect(vector.y).to be_within(tolerance).of(65.6)
+          expect(vector.z).to be_within(tolerance).of(78.9)
         end
       end
 
@@ -159,9 +159,9 @@ Spectator.describe Processing::PVector do
       it "adds to the vector" do
         vector.add(10.0, 20.0, 30.0)
         aggregate_failures "coordinates" do
-          expect(vector.x).to be_within(0.00001).of(22.3)
-          expect(vector.y).to be_within(0.00001).of(65.6)
-          expect(vector.z).to be_within(0.00001).of(108.9)
+          expect(vector.x).to be_within(tolerance).of(22.3)
+          expect(vector.y).to be_within(tolerance).of(65.6)
+          expect(vector.z).to be_within(tolerance).of(108.9)
         end
       end
 
@@ -242,9 +242,9 @@ Spectator.describe Processing::PVector do
       it "subtracts from the vector" do
         vector.sub(other)
         aggregate_failures "coordinates" do
-          expect(vector.x).to be_within(0.00001).of(2.3)
-          expect(vector.y).to be_within(0.00001).of(25.6)
-          expect(vector.z).to be_within(0.00001).of(48.9)
+          expect(vector.x).to be_within(tolerance).of(2.3)
+          expect(vector.y).to be_within(tolerance).of(25.6)
+          expect(vector.z).to be_within(tolerance).of(48.9)
         end
       end
 
@@ -258,9 +258,9 @@ Spectator.describe Processing::PVector do
       it "subtracts from the vector" do
         vector.sub(10.0, 20.0)
         aggregate_failures "coordinates" do
-          expect(vector.x).to be_within(0.00001).of(2.3)
-          expect(vector.y).to be_within(0.00001).of(25.6)
-          expect(vector.z).to be_within(0.00001).of(78.9)
+          expect(vector.x).to be_within(tolerance).of(2.3)
+          expect(vector.y).to be_within(tolerance).of(25.6)
+          expect(vector.z).to be_within(tolerance).of(78.9)
         end
       end
 
@@ -274,9 +274,9 @@ Spectator.describe Processing::PVector do
       it "subtracts from the vector" do
         vector.sub(10.0, 20.0, 30.0)
         aggregate_failures "coordinates" do
-          expect(vector.x).to be_within(0.00001).of(2.3)
-          expect(vector.y).to be_within(0.00001).of(25.6)
-          expect(vector.z).to be_within(0.00001).of(48.9)
+          expect(vector.x).to be_within(tolerance).of(2.3)
+          expect(vector.y).to be_within(tolerance).of(25.6)
+          expect(vector.z).to be_within(tolerance).of(48.9)
         end
       end
 
@@ -354,9 +354,9 @@ Spectator.describe Processing::PVector do
     it "scales the vector" do
       vector.mult(3.5)
       aggregate_failures "coordinates" do
-        expect(vector.x).to be_within(0.00001).of(43.05)
-        expect(vector.y).to be_within(0.00001).of(159.6)
-        expect(vector.z).to be_within(0.00001).of(276.15)
+        expect(vector.x).to be_within(tolerance).of(43.05)
+        expect(vector.y).to be_within(tolerance).of(159.6)
+        expect(vector.z).to be_within(tolerance).of(276.15)
       end
     end
 
@@ -371,9 +371,9 @@ Spectator.describe Processing::PVector do
       target = described_class.new
       described_class.mult(vector, 3.5, target)
       aggregate_failures "coordinates" do
-        expect(target.x).to be_within(0.00001).of(43.05)
-        expect(target.y).to be_within(0.00001).of(159.6)
-        expect(target.z).to be_within(0.00001).of(276.15)
+        expect(target.x).to be_within(tolerance).of(43.05)
+        expect(target.y).to be_within(tolerance).of(159.6)
+        expect(target.z).to be_within(tolerance).of(276.15)
       end
     end
 
@@ -387,9 +387,9 @@ Spectator.describe Processing::PVector do
       it "scales the vector" do
         returned = described_class.mult(vector, 3.5, nil)
         aggregate_failures "coordinates" do
-          expect(returned.x).to be_within(0.00001).of(43.05)
-          expect(returned.y).to be_within(0.00001).of(159.6)
-          expect(returned.z).to be_within(0.00001).of(276.15)
+          expect(returned.x).to be_within(tolerance).of(43.05)
+          expect(returned.y).to be_within(tolerance).of(159.6)
+          expect(returned.z).to be_within(tolerance).of(276.15)
         end
       end
     end
@@ -398,9 +398,9 @@ Spectator.describe Processing::PVector do
       it "scales the vector" do
         returned = described_class.mult(vector, 3.5)
         aggregate_failures "coordinates" do
-          expect(returned.x).to be_within(0.00001).of(43.05)
-          expect(returned.y).to be_within(0.00001).of(159.6)
-          expect(returned.z).to be_within(0.00001).of(276.15)
+          expect(returned.x).to be_within(tolerance).of(43.05)
+          expect(returned.y).to be_within(tolerance).of(159.6)
+          expect(returned.z).to be_within(tolerance).of(276.15)
         end
       end
     end
@@ -411,9 +411,9 @@ Spectator.describe Processing::PVector do
 
     it "subtracts the vectors" do
       aggregate_failures "coordinates" do
-        expect(&.x).to be_within(0.00001).of(43.05)
-        expect(&.y).to be_within(0.00001).of(159.6)
-        expect(&.z).to be_within(0.00001).of(276.15)
+        expect(&.x).to be_within(tolerance).of(43.05)
+        expect(&.y).to be_within(tolerance).of(159.6)
+        expect(&.z).to be_within(tolerance).of(276.15)
       end
     end
   end
@@ -482,6 +482,129 @@ Spectator.describe Processing::PVector do
         expect(&.x).to be_within(tolerance).of(3.514285714)
         expect(&.y).to be_within(tolerance).of(13.028571429)
         expect(&.z).to be_within(tolerance).of(22.542857143)
+      end
+    end
+  end
+
+  describe "#dist" do
+    let(other) { described_class.new(4.0, 5.0, 6.0) }
+    subject { vector.dist(other) }
+
+    it "computes the distance between vectors" do
+      is_expected.to be_within(tolerance).of(83.854996)
+    end
+  end
+
+  describe ".dist" do
+    let(v1) { described_class.new(1.2, 3.4, 5.6) }
+    let(v2) { described_class.new(7.8, 9.0, 4.2) }
+    subject { described_class.dist(v1, v2) }
+
+    it "computes the distance between vectors" do
+      is_expected.to be_within(tolerance).of(8.768124087)
+    end
+  end
+
+  describe "#dot" do
+    context "with another vector" do
+      let(other) { described_class.new(4.0, 5.0, 6.0) }
+      subject { vector.dot(other) }
+
+      it "computes the dot product" do
+        is_expected.to be_within(tolerance).of(750.6)
+      end
+    end
+
+    context "with coordinates" do
+      subject { vector.dot(4.0, 5.0, 6.0) }
+
+      it "computes the dot product" do
+        is_expected.to be_within(tolerance).of(750.6)
+      end
+    end
+  end
+
+  describe ".dot" do
+    let(v1) { described_class.new(1.2, 3.4, 5.6) }
+    let(v2) { described_class.new(7.8, 9.0, 4.2) }
+    subject { described_class.dot(v1, v2) }
+
+    it "computes the dot product" do
+      is_expected.to be_within(tolerance).of(63.48)
+    end
+  end
+
+  describe "#cross" do
+    let(other) { described_class.new(55.5, 42.0, 77.7) }
+
+    context "with a target" do
+      let(target) { described_class.new }
+      subject { vector.cross(other, target) }
+
+      it "computes the cross product" do
+        aggregate_failures "coordinates" do
+          # Precision on these is really bad.
+          expect(&.x).to be_within(0.001).of(229.32)
+          expect(&.y).to be_within(0.001).of(3423.24)
+          expect(&.z).to be_within(0.001).of(-2014.2)
+        end
+      end
+
+      it "returns the target" do
+        is_expected.to be(target)
+      end
+    end
+
+    context "without a target" do
+      subject { vector.cross(other, nil) }
+
+      it "computes the cross product" do
+        aggregate_failures "coordinates" do
+          # Precision on these is really bad.
+          expect(&.x).to be_within(0.001).of(229.32)
+          expect(&.y).to be_within(0.001).of(3423.24)
+          expect(&.z).to be_within(0.001).of(-2014.2)
+        end
+      end
+
+      it "returns a new instance" do
+        is_expected.to_not be(vector)
+      end
+    end
+  end
+
+  describe ".cross" do
+    let(v1) { described_class.new(1.1, 2.2, 3.3) }
+    let(v2) { described_class.new(55.5, 42.0, 77.7) }
+
+    context "with a target" do
+      let(target) { described_class.new }
+      subject { described_class.cross(v1, v2, target) }
+
+      it "computes the cross product" do
+        aggregate_failures "coordinates" do
+          # Precision on these is really bad.
+          expect(&.x).to be_within(0.001).of(32.34)
+          expect(&.y).to be_within(0.001).of(97.68)
+          expect(&.z).to be_within(0.001).of(-75.9)
+        end
+      end
+
+      it "returns the target" do
+        is_expected.to be(target)
+      end
+    end
+
+    context "without a target" do
+      subject { described_class.cross(v1, v2, nil) }
+
+      it "computes the cross product" do
+        aggregate_failures "coordinates" do
+          # Precision on these is really bad.
+          expect(&.x).to be_within(0.001).of(32.34)
+          expect(&.y).to be_within(0.001).of(97.68)
+          expect(&.z).to be_within(0.001).of(-75.9)
+        end
       end
     end
   end
