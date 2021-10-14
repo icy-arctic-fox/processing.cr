@@ -26,14 +26,16 @@ Here are some useful links:
 - [Issue tracker](https://github.com/icy-arctic-fox/processing.cr/issues)
 - [Processing](https://processing.org/)
   - [API Reference](https://processing.org/reference)
+  - [Source Code](https://github.com/processing/processing4/tree/master/core/src/processing/core)
 - [Crystal](https://crystal-lang.org/)
   - [Crystal API](https://crystal-lang.org/api/)
+- [SDL Shard](https://github.com/ysbaddaden/sdl.cr)
 
 ## How can I contribute?
 
 This project is still in its early stages.
 Most features and the Processing API still need to be implemented.
-There's a lot to do, find something that interest you!
+There's a lot to do, find something that interests you!
 Take a look at the [open issues](https://github.com/icy-arctic-fox/processing.cr/issues).
 Any issue not assigned can be picked up.
 Even if one is already assigned, you may still be able to help out, just ask!
@@ -49,6 +51,7 @@ These are quite substantial, but assistance would be greatly appreciated!
 
 - [Mock/stub rendering](https://github.com/icy-arctic-fox/processing.cr/issues/2) - Need a way to reliably test visual aspects.
 - Implement various parts of the Processing API.
+- Methods marked as not implemented. These can be found by running `git grep -C 1 not_implemented`.
 
 ### How to submit changes
 
@@ -98,8 +101,9 @@ To get started:
 
 1. [Fork the repository](https://github.com/icy-arctic-fox/processing/fork)
 2. Clone the forked git repository.
-3. Run `shards` in the repository to pull developer dependencies.
-4. Verify everything works by running `crystal spec` and some examples.
+3. Install SDL2. See the [install docs](https://wiki.libsdl.org/Installation) for details.
+4. Run `shards` in the repository to pull developer dependencies.
+5. Verify everything works by running `crystal spec` and some examples.
 
 ### Testing
 
