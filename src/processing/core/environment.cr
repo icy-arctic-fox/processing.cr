@@ -95,7 +95,7 @@ module Processing
 
       def smooth(level : Int32)
         case level
-        when 2,4,8
+        when 2, 4, 8
           @smooth = level
         else
           raise(ArgumentError.new("smooth level must be 2, 4, or 8"))
@@ -104,7 +104,7 @@ module Processing
 
       def pixel_density(density : Int32)
         case density
-        when 1,2
+        when 1, 2
           not_implemented!
         else
           raise(ArgumentError.new("pixel density must be 1 or 2"))
@@ -131,7 +131,7 @@ module Processing
 
       def size(width : Int32, height : Int32)
         @height = height
-        @width  = width
+        @width = width
 
         if @renderer
           # not_implemented! # TODO: implement updating the display window dimensions

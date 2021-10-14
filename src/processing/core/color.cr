@@ -18,15 +18,15 @@ module Processing
       end
 
       def background(gray : Int | Float)
-        backgrond(gray,gray,gray)
+        backgrond(gray, gray, gray)
       end
 
       def background(gray : Int | Float, alpha : Int | Float)
-        backgrond(gray,gray,gray,alpha)
+        backgrond(gray, gray, gray, alpha)
       end
 
       def background(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float)
-        background(v1,v2,v3,255)
+        background(v1, v2, v3, 255)
       end
 
       #
@@ -109,11 +109,11 @@ module Processing
       end
 
       def color(gray : Int | Float, alpha : Int | Float = 255) : Color
-        Color.new(gray.to_u8,alpha)
+        Color.new(gray.to_u8, alpha)
       end
 
       def color(v1 : Int | Float, v2 : Int | Float, v3 : Int | Float, alpha : Int | Float = 255) : Color
-        Color.new(v1,v2,v3,alpha)
+        Color.new(v1, v2, v3, alpha)
       end
 
       #

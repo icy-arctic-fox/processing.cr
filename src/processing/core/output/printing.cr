@@ -6,7 +6,7 @@ module Processing
         # Prints an array to stdout.
         #
         def print_arrray(array : Array)
-          array.each_with_index do |value,index|
+          array.each_with_index do |value, index|
             puts "[#{index}] #{value.inspect}"
           end
         end

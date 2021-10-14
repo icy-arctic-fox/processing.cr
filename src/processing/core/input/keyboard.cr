@@ -30,7 +30,6 @@ module Processing
         #
         def key_typed
         end
-
       end
     end
   end
