@@ -13,13 +13,13 @@ module Processing
         min(max(low, amt), high)
       end
 
-      def dist(x1,y1, x2,y2)
+      def dist(x1, y1, x2, y2)
         x = x2 - x1
         y = y2 - y1
         sqrt(x * x + y * y)
       end
 
-      def dist(x1,y1,z1, x2,y2,z2)
+      def dist(x1, y1, z1, x2, y2, z2)
         x = x2 - x1
         y = y2 - y1
         z = z2 - z1
@@ -58,12 +58,12 @@ module Processing
         lerp(start2, stop2, norm(value, start1, stop1))
       end
 
-      def max(a,b)
-        ::Math.max(a,b)
+      def max(a, b)
+        ::Math.max(a, b)
       end
 
-      def max(a,b,c)
-        max(max(a,b),c)
+      def max(a, b, c)
+        max(max(a, b), c)
       end
 
       def max(list : Array(Int)) : Int
@@ -74,12 +74,12 @@ module Processing
         list.max
       end
 
-      def min(a,b)
-        ::Math.min(a,b)
+      def min(a, b)
+        ::Math.min(a, b)
       end
 
-      def min(a,b,c)
-        min(min(a,b),c)
+      def min(a, b, c)
+        min(min(a, b), c)
       end
 
       def min(list : Array(Int)) : Int
@@ -118,8 +118,8 @@ module Processing
         ::Math.asin(value)
       end
 
-      def atan2(x,y)
-        ::Math.atan2(x,y)
+      def atan2(x, y)
+        ::Math.atan2(x, y)
       end
 
       def atan(value)
@@ -185,7 +185,6 @@ module Processing
       def random(low : Float, high : Float) : Float
         rand(low..high)
       end
-
     end
   end
 end

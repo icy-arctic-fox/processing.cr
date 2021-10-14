@@ -62,7 +62,6 @@ module Processing
         #
         def mouse_wheel(event)
         end
-
       end
     end
   end
