@@ -36,7 +36,9 @@ jobs:
             stable: false
     steps:
       - name: Install libSDL2
-        run: sudo apt-get install libsdl2-dev
+        run: |
+          sudo apt-get update
+          sudo apt-get install libsdl2-dev
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1.5.2
         with:
