@@ -1,0 +1,47 @@
+name: CI
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * 0" # Every Sunday at midnight
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+    container:
+      image: crystallang/crystal
+    steps:
+      - uses: actions/checkout@v2
+      - name: Format
+        run: crystal tool format --check
+      - name: Lint
+        uses: crystal-ameba/github-action@v0.2.12
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  test:
+    runs-on: ubuntu-latest
+    name: "crystal: ${{ matrix.crystal }}, stable: ${{ matrix.stable }}"
+    continue-on-error: ${{ !matrix.stable }}
+    strategy:
+      matrix:
+        stable: [true]
+        crystal:
+          - 1.0.0
+          - 1.1.1
+          - 1.2.0
+        include:
+          - crystal: nightly
+            stable: false
+    steps:
+      - name: Install Crystal
+        uses: crystal-lang/install-crystal@v1.5.2
+        with:
+          crystal: ${{ matrix.crystal }}
+      - name: Checkout Source
+        uses: actions/checkout@v2
+      - name: Install Shards
+        run: shards install --ignore-crystal-version
+      - name: Tests
+        run: crystal spec --error-trace -v --order=random
+      - name: Tests Multithreaded
+        run: crystal spec --error-trace -v --order=random -Dpreview_mt
