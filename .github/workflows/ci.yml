@@ -33,6 +33,8 @@ jobs:
           - crystal: nightly
             stable: false
     steps:
+      - name: Install libSDL2
+        run: apt-get install libsdl2-dev
       - name: Install Crystal
         uses: crystal-lang/install-crystal@v1.5.2
         with:
