@@ -23,6 +23,7 @@ jobs:
     name: "crystal: ${{ matrix.crystal }}, stable: ${{ matrix.stable }}"
     continue-on-error: ${{ !matrix.stable }}
     strategy:
+      fail-fast: false
       matrix:
         stable: [true]
         crystal:
